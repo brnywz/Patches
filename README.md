@@ -91,7 +91,7 @@ You can use [ReVanced CLI](https://github.com/ReVanced/revanced-cli) or [ReVance
 
 ### 📙 Contributing
 
-Thank you for considering contributing to ReVanced Patches. You can find the contribution guidelines [here](CONTRIBUTING.md).
+Thank you for considering contributing tReVanced Patches. You can find the contribution guidelines [here](CONTRIBUTING.md).
 
 ### 🛠️ Building
 
