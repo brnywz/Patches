@@ -36,7 +36,7 @@
       {
         "assets": [
           {
-            "path": "patches/build/libs/patches-!(*sources*|*javadoc*).rvp?(.asc)"
+            "path": "patches/build/libs/patches-!(*sources*|*javadoc*).rvp"
           }
         ],
         "successComment": false
@@ -51,18 +51,6 @@
             "to": "dev"
           }
         ],
-        "clearWorkspace": true
-      }
-    ]
-  ]
-}        ],
-        "successComment": false
-      }
-    ],
-    [
-      "@saithodev/semantic-release-backmerge",
-      {
-        "backmergeBranches": [{"from": "main", "to": "dev"}],
         "clearWorkspace": true
       }
     ]
