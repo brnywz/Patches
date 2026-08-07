@@ -29,10 +29,7 @@ jobs:
 
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
-        
-      - name: Make gradlew executable
-         run: chmod +x ./gradlew
-         
+    
       - name: Build patches
         run: ./gradlew :patches:buildAndroid clean
          
