@@ -13,6 +13,15 @@
 ### Features
 
 * add new patch ([0bf22bf](https://github.com/brnywz/Patches/commit/0bf22bf5215ee87988fcd1e032c4b8cffb880176))
+* initial release ([e971414](https://github.com/brnywz/Patches/commit/e9714147703a42cbf7fb2fc11933e7708f32b979))
+* initial release ([fc5aa07](https://github.com/brnywz/Patches/commit/fc5aa079a53ee6174efcf99ed043ad3ecdf25685))
+
+# 1.0.0 (2026-08-07)
+
+
+### Features
+
+* add new patch ([0bf22bf](https://github.com/brnywz/Patches/commit/0bf22bf5215ee87988fcd1e032c4b8cffb880176))
 * initial release ([fc5aa07](https://github.com/brnywz/Patches/commit/fc5aa079a53ee6174efcf99ed043ad3ecdf25685))
 
 s with contains([#6681](https://github.com/ReVanced/revanced-patches/issues/6681)) ([00da402](https://github.com/ReVanced/revanced-patches/commit/00da4027707068f06ee7041b53d1316a7b218d5d))
