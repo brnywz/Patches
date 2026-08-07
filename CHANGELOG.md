@@ -1,3 +1,10 @@
+# 1.0.0 (2026-08-07)
+
+
+### Features
+
+* initial release ([fc5aa07](https://github.com/brnywz/Patches/commit/fc5aa079a53ee6174efcf99ed043ad3ecdf25685))
+
 # [6.1.0](https://github.com/ReVanced/revanced-patches/compare/v6.0.1...v6.1.0) (2026-03-18)
 
 
