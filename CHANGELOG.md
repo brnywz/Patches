@@ -1,3 +1,11 @@
+# 1.0.0 (2026-08-07)
+
+
+### Features
+
+* add new patch ([0bf22bf](https://github.com/brnywz/Patches/commit/0bf22bf5215ee87988fcd1e032c4b8cffb880176))
+* initial release ([fc5aa07](https://github.com/brnywz/Patches/commit/fc5aa079a53ee6174efcf99ed043ad3ecdf25685))
+
 s with contains([#6681](https://github.com/ReVanced/revanced-patches/issues/6681)) ([00da402](https://github.com/ReVanced/revanced-patches/commit/00da4027707068f06ee7041b53d1316a7b218d5d))
 * Rename string keys correctly ([16e00ab](https://github.com/ReVanced/revanced-patches/commit/16e00ab4c0ff10e58adea40c7de72658788fcd97))
 * **Spotify - Sanitize sharing links:** Update patch to latest app versions ([#6685](https://github.com/ReVanced/revanced-patches/issues/6685)) ([bb7448b](https://github.com/ReVanced/revanced-patches/commit/bb7448bc9d789843371d16bfccc9815662913333))
