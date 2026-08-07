@@ -19,43 +19,52 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+  uses: actions/checkout@v4
+
+      - name: Make gradlew executable
+  run: chmod +x ./gradlew
+
+     - name: Verify gradlew permission
+  run: ls -l ./gradlew
+
+     - name: Build
+  run: ./gradlew :patches:buildAndroid clean
 
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Cache Gradle
+          
+          - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
     
-      - name: Build patches
+          - name: Build patches
         run: ./gradlew :patches:buildAndroid clean
          
-      - name: Build
+          - name: Build
         env:
           ORG_GRADLE_PROJECT_githubPackagesUsername: ${{ github.actor }}
           ORG_GRADLE_PROJECT_githubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew :patches:buildAndroid clean
 
-      - name: Setup Node.js
+         - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
           cache: 'npm'
-
-      - name: Install dependencies
+          
+          - name: Install dependencies
         run: npm install
-
-      - name: Import GPG key
+ 
+          - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
           fingerprint: ${{ vars.GPG_FINGERPRINT }}
 
-      - name: Release
+            - name: Release
         uses: cycjimmy/semantic-release-action@v5
         id: release
         env:
@@ -63,7 +72,7 @@ jobs:
           ORG_GRADLE_PROJECT_githubPackagesUsername: ${{ github.actor }}
           ORG_GRADLE_PROJECT_githubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Attest
+              - name: Attest
         if: steps.release.outputs.new_release_published == 'true'
         uses: actions/attest@v4
         with:
