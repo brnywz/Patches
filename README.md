@@ -31,7 +31,7 @@
    </a>&nbsp;&nbsp;&nbsp;
    <a href="https://reddit.com/r/revancedapp">
        <picture>
-           <source height="24px" media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/13122796/178032351-9d9d5619-8ef7-470a-9eec-2744ece54553.png" />
+           <source height="24px" media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/13122796/178032351-9d9d5619-8ef7-470a-9. eec-2744ece54553.png" />
            <img height="24px" src="https://user-images.githubusercontent.com/13122796/178032351-9d9d5619-8ef7-470a-9eec-2744ece54553.png" />
        </picture>
    </a>&nbsp;&nbsp;&nbsp;
