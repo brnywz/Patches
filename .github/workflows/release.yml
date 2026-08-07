@@ -32,9 +32,9 @@ jobs:
         
       - name: Make gradlew executable
          run: chmod +x ./gradlew
+         
       - name: Build patches
-      
-         run: ./gradlew :patches:buildAndroid clean
+        run: ./gradlew :patches:buildAndroid clean
          
       - name: Build
         env:
