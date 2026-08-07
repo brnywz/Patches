@@ -30,6 +30,9 @@ jobs:
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+  
       - name: Build
         env:
           ORG_GRADLE_PROJECT_githubPackagesUsername: ${{ github.actor }}
