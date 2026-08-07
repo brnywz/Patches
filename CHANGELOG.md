@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/brnywz/Patches/compare/v1.0.0...v1.1.0) (2026-08-07)
+
+
+### Features
+
+* add new patch ([0bf22bf](https://github.com/brnywz/Patches/commit/0bf22bf5215ee87988fcd1e032c4b8cffb880176))
+
 # 1.0.0 (2026-08-07)
 
 
