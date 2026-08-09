@@ -35,11 +35,13 @@ jobs:
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
 
-            - name: Build  env:
+      - name: Generate patches files
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # To update `README.md` and `patches.json`, the command `./gradlew generatePatchesFiles clean` should be used instead of the command `./gradlew build clean`
+        # To update README.md and patches.json:
+        # ./gradlew generatePatchesFiles clean
         run: ./gradlew generatePatchesFiles
-        
+
       - name: Build patches
         env:
           ORG_GRADLE_PROJECT_githubPackagesUsername: ${{ github.actor }}
