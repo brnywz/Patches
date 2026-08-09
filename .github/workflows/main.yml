@@ -39,6 +39,52 @@ jobs:
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
 
+      - name: List Gradle tasks
+        run: ./gradlew tasks --all
+
+      - name: Build patches
+        run: ./gradlew :patches:buildAndroid
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "lts/*"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          fingerprint: ${{ vars.GPG_FINGERPRINT }}
+
+      - name: Configure GPG
+        run: |
+          mkdir -p ~/.gnupg
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          gpgconf --kill gpg-agent
+
+      - name: Release
+        id: semantic_release
+        uses: cycjimmy/semantic-release-action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Attest
+        if: steps.semantic_release.outputs.new_release_published == 'true'
+        uses: actions/attest@v4
+        with:
+          subject-name: ReVanced Patches ${{ steps.semantic_release.outputs.new_release_git_tag }}
+          subject-path: patches/build/libs/patches-*.rvp          java-version: "17"
+
+      - name: Cache Gradle
+        uses: burrunan/gradle-cache-action@v3
+
       - name: Generate patches files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
